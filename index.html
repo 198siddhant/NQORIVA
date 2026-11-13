@@ -1,10 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0b0614">
+<meta name="description" content="NQORIVA — Smart NFC business cards. Share your contact, social links and brand with one tap. No app needed. Starting at ₹299.">
+<meta property="og:title" content="NQORIVA — Tap Once. Connect Instantly.">
+<meta property="og:description" content="Not just a business card. A smarter way to introduce yourself with NFC technology.">
+<meta property="og:type" content="website">
 <title>NQORIVA — Tap Once. Connect Instantly.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -147,6 +150,40 @@ section{padding:90px 7%;position:relative;z-index:1}
   color:#180c29;font-weight:800;transition:.3s;
 }
 .order:hover{box-shadow:0 0 25px #a56bff88;transform:scale(1.025)}
+
+/* How it works */
+.steps{
+  max-width:900px;margin:auto;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;
+}
+.step{
+  padding:28px 24px;border-radius:18px;
+  background:linear-gradient(145deg,#211433dd,#120b1ddd);
+  border:1px solid #aa79e933;text-align:center;
+  transition:transform .3s,border-color .3s;
+}
+.step:hover{transform:translateY(-8px);border-color:#b987ff}
+.step-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,#bd8aff,#8c4bea);
+  color:#170b29;font-weight:800;font-size:18px;margin-bottom:18px;
+}
+.step h3{font-size:18px;margin-bottom:10px}
+.step p{color:var(--muted);font-size:14px;line-height:1.7}
+
+/* Benefits */
+.benefits{
+  max-width:900px;margin:40px auto 0;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;
+}
+.benefit{
+  padding:22px 20px;border-radius:16px;
+  background:#ffffff06;border:1px solid #ffffff10;
+}
+.benefit strong{display:block;color:#d2b2ff;margin-bottom:8px;font-size:15px}
+.benefit span{color:var(--muted);font-size:13px;line-height:1.6}
+
 .coming{
   max-width:850px;margin:auto;text-align:center;padding:40px 25px;
   border:1px solid #8052ad66;border-radius:20px;
@@ -157,14 +194,17 @@ section{padding:90px 7%;position:relative;z-index:1}
   color:#d2adff;border:1px solid #a56bff88;
   font-size:11px;letter-spacing:2px;margin-bottom:20px;
 }
-.coming-items{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.coming-items{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:28px}
 .coming-items span{
   border:1px solid #ffffff18;background:#ffffff08;
   color:#c9b8dd;padding:12px 17px;border-radius:9px;font-size:13px;
 }
+.coming .order{max-width:280px;margin:0 auto}
+
 .about{max-width:650px;text-align:center;margin:auto;color:var(--muted);line-height:1.9}
+
 footer{
-  position:relative;z-index:1;text-align:center;padding:35px 15px;
+  position:relative;z-index:1;text-align:center;padding:40px 15px;
   border-top:1px solid #ffffff12;color:#927fa6;font-size:13px;
 }
 footer strong{color:#c49aff;letter-spacing:2px}
@@ -192,9 +232,10 @@ footer strong{color:#c49aff;letter-spacing:2px}
 <div class="orb three"></div>
 
 <header>
-  <a class="logo" href="#">TAPORA<span>.</span></a>
+  <a class="logo" href="#">NQORIVA<span>.</span></a>
   <nav>
     <a href="#products">Cards</a>
+    <a href="#how">How it works</a>
     <a href="#coming">Coming Soon</a>
     <a href="#about">About</a>
   </nav>
@@ -205,7 +246,7 @@ footer strong{color:#c49aff;letter-spacing:2px}
   <div class="hero-content">
     <div class="tag">✦ THE FUTURE OF CONNECTION</div>
     <h1>Tap once.<br><span class="gradient">Connect instantly.</span></h1>
-    <p>Not just a business card. A smarter way to introduce yourself. Experience the next generation of digital connections with Tapora.</p>
+    <p>Not just a business card. A smarter way to introduce yourself. Experience the next generation of digital connections with Nqoriva.</p>
     <a href="#products" class="hero-btn">Explore Smart Cards ↗</a>
     <div class="scroll-hint">SCROLL TO EXPLORE ↓</div>
   </div>
@@ -218,14 +259,14 @@ footer strong{color:#c49aff;letter-spacing:2px}
     <article class="product-card reveal">
       <div class="product-art">
         <div class="nfc-card">
-          <strong>TAPORA.</strong>
+          <strong>NQORIVA.</strong>
           <small>SMART BUSINESS CARD</small>
         </div>
       </div>
       <h3>Smart Business Card</h3>
       <div class="price">₹299</div>
-      <p>Our signature Tapora design. Share your digital contact profile, social links and more with just one tap.</p>
-      <a class="order" href="https://wa.me/917843052649?text=Hi%20Tapora!%20I%20want%20to%20order%20the%20Smart%20Business%20Card%20for%20Rs.%20299." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
+      <p>Our signature design. Share your digital contact profile, social links, WhatsApp and more — instantly with one tap. No app needed.</p>
+      <a class="order" href="https://wa.me/917843052649?text=Hi%20Nqoriva!%20I%20want%20to%20order%20the%20Smart%20Business%20Card%20for%20Rs.%20299." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
     </article>
 
     <article class="product-card reveal">
@@ -237,15 +278,61 @@ footer strong{color:#c49aff;letter-spacing:2px}
       </div>
       <h3>Custom Smart Business Card</h3>
       <div class="price">₹499</div>
-      <p>Your identity, your style. A personalised design featuring your name, logo, colours and branding.</p>
-      <a class="order" href="https://wa.me/917843052649?text=Hi%20Tapora!%20I%20want%20to%20order%20the%20Custom%20Smart%20Business%20Card%20for%20Rs.%20499." target="_blank" rel="noopener">Customise & Order ↗</a>
+      <p>Your identity, your style. Fully personalised with your name, logo, colours and branding. Make every introduction memorable.</p>
+      <a class="order" href="https://wa.me/917843052649?text=Hi%20Nqoriva!%20I%20want%20to%20order%20the%20Custom%20Smart%20Business%20Card%20for%20Rs.%20499." target="_blank" rel="noopener">Customise & Order ↗</a>
     </article>
+  </div>
+</section>
+
+<section id="how">
+  <h2 class="section-heading reveal">How it works</h2>
+  <p class="section-sub reveal">Simple. Instant. Memorable.</p>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num">1</div>
+      <h3>Order your card</h3>
+      <p>Choose the standard or custom design and message us on WhatsApp. We’ll take care of the rest.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">2</div>
+      <h3>We set it up</h3>
+      <p>Your card is programmed with your digital profile. Update your details anytime — the card stays the same.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">3</div>
+      <h3>Tap & connect</h3>
+      <p>Hold your card near any modern phone. Your profile opens instantly. No app required for anyone.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-heading reveal">Why Nqoriva?</h2>
+  <p class="about reveal">We believe connections should be effortless. Nqoriva brings modern NFC technology and thoughtful design together to make sharing your identity simple, stylish and memorable.</p>
+  
+  <div class="benefits">
+    <div class="benefit reveal">
+      <strong>Works on every phone</strong>
+      <span>iPhone and Android. NFC for modern phones + QR backup for older ones.</span>
+    </div>
+    <div class="benefit reveal">
+      <strong>Update anytime</strong>
+      <span>Change your number, job title or links without reprinting the card.</span>
+    </div>
+    <div class="benefit reveal">
+      <strong>No app needed</strong>
+      <span>The other person doesn’t need to install anything. Just tap and go.</span>
+    </div>
+    <div class="benefit reveal">
+      <strong>Premium feel</strong>
+      <span>Clean design that feels modern and professional in every introduction.</span>
+    </div>
   </div>
 </section>
 
 <section id="coming">
   <h2 class="section-heading reveal">Something More Is Coming.</h2>
-  <p class="section-sub reveal">The Tapora universe is just getting started.</p>
+  <p class="section-sub reveal">The Nqoriva universe is just getting started.</p>
   <div class="coming reveal">
     <div class="pill">✦ COMING SOON ✦</div>
     <div class="coming-items">
@@ -254,19 +341,15 @@ footer strong{color:#c49aff;letter-spacing:2px}
       <span>♡ Personalised Gifts</span>
       <span>✧ Creative NFC Experiences</span>
     </div>
+    <a class="order" href="https://wa.me/917843052649?text=Hi%20Nqoriva!%20Please%20notify%20me%20when%20new%20products%20launch." target="_blank" rel="noopener">Notify me on WhatsApp</a>
   </div>
-</section>
-
-<section id="about">
-  <h2 class="section-heading reveal">Why Tapora?</h2>
-  <p class="about reveal">We believe connections should be effortless. Tapora brings modern NFC technology and thoughtful design together to make sharing your identity simple, stylish and memorable.</p>
 </section>
 </main>
 
 <footer>
-  <strong>TAPORA.</strong><br><br>
+  <strong>NQORIVA.</strong><br><br>
   Tap once. Connect instantly.<br><br>
-  © 2026 Tapora. All rights reserved.
+  © 2026 Nqoriva. All rights reserved.
 </footer>
 
 <script>
@@ -319,5 +402,6 @@ resize();
 animate();
 window.addEventListener('resize',resize);
 </script>
+
 </body>
 </html>

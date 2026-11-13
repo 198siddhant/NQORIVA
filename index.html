@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0614">
+<title>TAPORA — Tap Once. Connect Instantly.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#0b0614;
+  --purple:#a56bff;
+  --light:#d0adff;
+  --text:#f8f2ff;
+  --muted:#b9a8ce;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Outfit',sans-serif;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+#particles{
+  position:fixed;inset:0;width:100%;height:100%;
+  pointer-events:none;z-index:0;
+}
+.orb{
+  position:fixed;border-radius:50%;filter:blur(75px);
+  opacity:.23;pointer-events:none;z-index:0;
+  animation:drift 12s ease-in-out infinite alternate;
+}
+.orb.one{width:300px;height:300px;background:#7928d8;top:10%;left:-130px}
+.orb.two{width:280px;height:280px;background:#4c19a4;right:-130px;top:50%;animation-delay:-5s}
+.orb.three{width:220px;height:220px;background:#9b42dc;bottom:-100px;left:40%;animation-delay:-8s}
+@keyframes drift{
+  from{transform:translate(0,0) scale(1)}
+  to{transform:translate(55px,-45px) scale(1.2)}
+}
+header{
+  position:sticky;top:0;z-index:10;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:19px 7%;background:#0b0614cc;
+  backdrop-filter:blur(18px);border-bottom:1px solid #ffffff12;
+}
+.logo{font-size:27px;font-weight:800;letter-spacing:2px;color:#c49aff}
+.logo span{color:white}
+nav{display:flex;gap:25px}
+nav a{font-size:14px;color:#d8c9ea;transition:.3s}
+nav a:hover{color:var(--purple)}
+.hero{
+  min-height:660px;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:100px 20px 90px;position:relative;z-index:1;
+}
+.hero-content{max-width:850px}
+.tag{
+  display:inline-block;color:#d2b2ff;border:1px solid #8d59ca88;
+  background:#9e5bff12;border-radius:50px;padding:9px 17px;
+  font-size:11px;letter-spacing:3px;font-weight:700;
+  animation:fadeUp .8s both;
+}
+h1{
+  font-size:clamp(48px,9vw,88px);line-height:1.05;
+  margin:28px 0 20px;font-weight:800;letter-spacing:-3px;
+  animation:fadeUp .9s .1s both;
+}
+.gradient{
+  background:linear-gradient(100deg,#fff,#c49aff,#8d4aff,#e2caff);
+  background-size:250%;-webkit-background-clip:text;
+  background-clip:text;color:transparent;
+  animation:shine 6s linear infinite;
+}
+@keyframes shine{to{background-position:250% center}}
+.hero p{
+  max-width:550px;margin:auto;color:var(--muted);
+  line-height:1.8;font-size:16px;animation:fadeUp 1s .2s both;
+}
+.hero-btn{
+  display:inline-block;margin-top:32px;padding:15px 29px;
+  background:linear-gradient(110deg,#bd8aff,#8c4bea);
+  color:#170b29;border-radius:10px;font-weight:800;
+  box-shadow:0 0 30px #a56bff44;transition:.3s;
+  animation:fadeUp 1s .3s both;
+}
+.hero-btn:hover{transform:translateY(-5px);box-shadow:0 0 45px #a56bff88}
+.scroll-hint{margin-top:65px;color:#927da9;font-size:11px;letter-spacing:3px;animation:bob 2s infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+section{padding:90px 7%;position:relative;z-index:1}
+.section-heading{text-align:center;font-size:clamp(30px,5vw,43px);margin-bottom:12px}
+.section-sub{text-align:center;color:var(--muted);margin-bottom:48px}
+.products{
+  max-width:950px;margin:auto;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:28px;
+}
+.product-card{
+  position:relative;overflow:hidden;padding:25px;
+  border-radius:20px;background:linear-gradient(145deg,#211433dd,#120b1ddd);
+  border:1px solid #aa79e933;
+  box-shadow:0 15px 50px #0005;
+  transition:transform .35s,border-color .35s,box-shadow .35s;
+}
+.product-card:hover{
+  transform:translateY(-12px) rotateX(3deg);
+  border-color:#b987ff;box-shadow:0 20px 55px #9a5bff24;
+}
+.product-card:before{
+  content:"";position:absolute;width:180px;height:180px;
+  border-radius:50%;background:#8f4de9;filter:blur(90px);
+  opacity:.13;top:-100px;right:-50px;pointer-events:none;
+}
+.product-art{
+  height:180px;display:flex;align-items:center;justify-content:center;
+  border-radius:13px;background:radial-gradient(ellipse,#4b286d,#171020);
+  margin-bottom:25px;perspective:600px;
+}
+.nfc-card{
+  width:205px;height:119px;border-radius:13px;
+  background:linear-gradient(135deg,#111018,#35264a 65%,#18111f);
+  border:1px solid #c49affaa;
+  box-shadow:0 15px 35px #0009,0 0 20px #a56bff33;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:18px;transform:rotate(-7deg);
+  animation:cardFloat 4s ease-in-out infinite;
+}
+.nfc-card.custom{transform:rotate(7deg);animation-delay:-2s}
+@keyframes cardFloat{
+  0%,100%{translate:0 0}
+  50%{translate:0 -10px}
+}
+.nfc-card strong{font-size:23px;color:#d3b2ff;letter-spacing:2px}
+.nfc-card small{color:#d4c6e6;font-size:9px;letter-spacing:2px;margin-top:10px}
+.product-card h3{font-size:22px;margin-bottom:10px}
+.price{font-size:34px;font-weight:800;color:#c59aff;margin:12px 0}
+.product-card p{color:var(--muted);font-size:14px;line-height:1.8;min-height:76px}
+.order{
+  display:block;text-align:center;margin-top:22px;padding:14px;
+  border-radius:9px;background:linear-gradient(110deg,#bb87ff,#9452e8);
+  color:#180c29;font-weight:800;transition:.3s;
+}
+.order:hover{box-shadow:0 0 25px #a56bff88;transform:scale(1.025)}
+.coming{
+  max-width:850px;margin:auto;text-align:center;padding:40px 25px;
+  border:1px solid #8052ad66;border-radius:20px;
+  background:linear-gradient(130deg,#211333bb,#130c20bb);
+}
+.pill{
+  display:inline-block;padding:7px 15px;border-radius:30px;
+  color:#d2adff;border:1px solid #a56bff88;
+  font-size:11px;letter-spacing:2px;margin-bottom:20px;
+}
+.coming-items{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.coming-items span{
+  border:1px solid #ffffff18;background:#ffffff08;
+  color:#c9b8dd;padding:12px 17px;border-radius:9px;font-size:13px;
+}
+.about{max-width:650px;text-align:center;margin:auto;color:var(--muted);line-height:1.9}
+footer{
+  position:relative;z-index:1;text-align:center;padding:35px 15px;
+  border-top:1px solid #ffffff12;color:#927fa6;font-size:13px;
+}
+footer strong{color:#c49aff;letter-spacing:2px}
+.reveal{opacity:0;transform:translateY(45px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:600px){
+  header{padding:17px 5%}
+  nav{gap:13px}
+  nav a{font-size:12px}
+  .hero{min-height:590px}
+  section{padding:70px 5%}
+  h1{letter-spacing:-2px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+<div class="orb one"></div>
+<div class="orb two"></div>
+<div class="orb three"></div>
+
+<header>
+  <a class="logo" href="#">TAPORA<span>.</span></a>
+  <nav>
+    <a href="#products">Cards</a>
+    <a href="#coming">Coming Soon</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<main>
+<div class="hero">
+  <div class="hero-content">
+    <div class="tag">✦ THE FUTURE OF CONNECTION</div>
+    <h1>Tap once.<br><span class="gradient">Connect instantly.</span></h1>
+    <p>Not just a business card. A smarter way to introduce yourself. Experience the next generation of digital connections with Tapora.</p>
+    <a href="#products" class="hero-btn">Explore Smart Cards ↗</a>
+    <div class="scroll-hint">SCROLL TO EXPLORE ↓</div>
+  </div>
+</div>
+
+<section id="products">
+  <h2 class="section-heading reveal">Meet Your New Identity.</h2>
+  <p class="section-sub reveal">One tap. Endless possibilities.</p>
+  <div class="products">
+    <article class="product-card reveal">
+      <div class="product-art">
+        <div class="nfc-card">
+          <strong>TAPORA.</strong>
+          <small>SMART BUSINESS CARD</small>
+        </div>
+      </div>
+      <h3>Smart Business Card</h3>
+      <div class="price">₹299</div>
+      <p>Our signature Tapora design. Share your digital contact profile, social links and more with just one tap.</p>
+      <a class="order" href="https://wa.me/917843052649?text=Hi%20Tapora!%20I%20want%20to%20order%20the%20Smart%20Business%20Card%20for%20Rs.%20299." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
+    </article>
+
+    <article class="product-card reveal">
+      <div class="product-art">
+        <div class="nfc-card custom">
+          <strong>YOUR NAME.</strong>
+          <small>YOUR PERSONAL BRAND</small>
+        </div>
+      </div>
+      <h3>Custom Smart Business Card</h3>
+      <div class="price">₹499</div>
+      <p>Your identity, your style. A personalised design featuring your name, logo, colours and branding.</p>
+      <a class="order" href="https://wa.me/917843052649?text=Hi%20Tapora!%20I%20want%20to%20order%20the%20Custom%20Smart%20Business%20Card%20for%20Rs.%20499." target="_blank" rel="noopener">Customise & Order ↗</a>
+    </article>
+  </div>
+</section>
+
+<section id="coming">
+  <h2 class="section-heading reveal">Something More Is Coming.</h2>
+  <p class="section-sub reveal">The Tapora universe is just getting started.</p>
+  <div class="coming reveal">
+    <div class="pill">✦ COMING SOON ✦</div>
+    <div class="coming-items">
+      <span>✦ NFC Stickers</span>
+      <span>♫ Music Tap Products</span>
+      <span>♡ Personalised Gifts</span>
+      <span>✧ Creative NFC Experiences</span>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-heading reveal">Why Tapora?</h2>
+  <p class="about reveal">We believe connections should be effortless. Tapora brings modern NFC technology and thoughtful design together to make sharing your identity simple, stylish and memorable.</p>
+</section>
+</main>
+
+<footer>
+  <strong>TAPORA.</strong><br><br>
+  Tap once. Connect instantly.<br><br>
+  © 2026 Tapora. All rights reserved.
+</footer>
+
+<script>
+// Smooth scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// Lightweight floating purple particles
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+let particles=[];
+let width,height;
+function resize(){
+  width=canvas.width=window.innerWidth;
+  height=canvas.height=window.innerHeight;
+  const count=Math.min(45,Math.floor(width/13));
+  particles=Array.from({length:count},()=>({
+    x:Math.random()*width,y:Math.random()*height,
+    r:Math.random()*2+0.5,
+    speed:Math.random()*0.35+0.12,
+    drift:Math.random()*0.4-0.2,
+    alpha:Math.random()*0.5+0.15
+  }));
+}
+function animate(){
+  ctx.clearRect(0,0,width,height);
+  particles.forEach(p=>{
+    p.y-=p.speed;p.x+=p.drift;
+    if(p.y<-5){p.y=height+5;p.x=Math.random()*width}
+    if(p.x<0)p.x=width;
+    if(p.x>width)p.x=0;
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(185,130,255,${p.alpha})`;
+    ctx.shadowBlur=12;
+    ctx.shadowColor='#a56bff';
+    ctx.fill();
+  });
+  ctx.shadowBlur=0;
+  requestAnimationFrame(animate);
+}
+resize();
+animate();
+window.addEventListener('resize',resize);
+</script>
+</body>
+</html>
